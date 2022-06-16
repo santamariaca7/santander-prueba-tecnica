@@ -1,9 +1,14 @@
 {
+  "author": {
+    "name": "Alejandro Santamaria canseco",
+    "email": "santamariaca7@gmail.com"
+  },
   "name": "santander-prueba-tecnica",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start-mockapi": "ng serve --configuration mockApi",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"

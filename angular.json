@@ -64,6 +64,14 @@
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
+            },
+            "mockApi": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.mockapi.ts"
+                }
+              ]
             }
           },
           "defaultConfiguration": "production"
@@ -76,6 +84,9 @@
             },
             "development": {
               "browserTarget": "santander-prueba-tecnica:build:development"
+            },
+            "mockApi": {
+              "browserTarget": "santander-prueba-tecnica:build:mockApi"
             }
           },
           "defaultConfiguration": "development"

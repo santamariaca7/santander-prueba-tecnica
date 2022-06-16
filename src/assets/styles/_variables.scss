@@ -1,0 +1,25 @@
+$grid-columns: 12;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px
+);
+
+$color-info: #4bb1cf;
+$color-danger: #ED4F32;
+$color-primary: #212121;
+$color-success: #15CD72;
+$color-warning: #EDE04D;
+$color-muted: #ECECEC;

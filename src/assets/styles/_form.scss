@@ -1,0 +1,67 @@
+@import "variables";
+
+.ng-submitted {
+  .form-group {
+    input {
+      &.ng-invalid {
+        border-color: $color-danger;
+
+        & + .message-error {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 8px;
+
+  label {
+    position: absolute;
+    top: 0;
+    font-weight: 500;
+    font-size: 11px;
+    color: $color-primary;
+    transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+    -o-transition: all 0.2s;
+  }
+
+
+  input[type=text] {
+    border: 2px solid #aaa;
+    border-radius: 4px;
+    margin: 16px 0 12px 0;
+    outline: none;
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+
+    &.ng-invalid.ng-touched {
+      border-color: $color-danger;
+
+      & + .message-error {
+        display: block;
+      }
+    }
+
+  }
+
+  .message-error {
+    color: $color-danger;
+    font-size: 11px;
+    display: none;
+    position: absolute;
+    bottom: -5px;
+  }
+
+  .input-counter {
+    position: absolute;
+    right: 0;
+    bottom: -5px;
+    font-size: 11px;
+  }
+}

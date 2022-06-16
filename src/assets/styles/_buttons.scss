@@ -1,0 +1,43 @@
+@import "variables";
+
+button.btn {
+  user-select: none;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  white-space: nowrap;
+  text-decoration: none;
+  text-align: center;
+  line-height: 36px;
+  padding: 0 16px;
+  border-radius: 4px;
+  color: $color-primary;
+  background: transparent;
+
+  &.btn-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+
+    &.btn-warn {
+      color: $color-danger;
+    }
+  }
+
+  &.btn-flat {
+    &.btn-primary {
+      background: $color-primary;
+      color: white;
+    }
+  }
+
+  &.btn-outline {
+    &.btn-primary {
+      border: 1px solid $color-primary;
+      color: $color-primary;
+    }
+  }
+}

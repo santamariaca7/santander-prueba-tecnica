@@ -1,0 +1,39 @@
+.alert-container {
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .alert-content {
+    padding: 16px;
+    background-color: white;
+    border-radius: 5px;
+    text-align: center;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    min-width: 320px;
+
+    .alert-title {
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+    }
+
+    .alert-message {
+      font-size: 1rem;
+      margin-bottom: 32px;
+    }
+
+    .alert-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+    }
+  }
+}

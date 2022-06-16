@@ -1,0 +1,7 @@
+<div class="notification-toast" [ngClass]="'notification-' + notification.type" *ngIf="notification">
+  {{notification.message}}
+
+  <button class="btn btn-icon" (click)="notification = null">
+    <i class="material-icons">close</i>
+  </button>
+</div>

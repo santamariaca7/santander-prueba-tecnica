@@ -1,0 +1,61 @@
+<div class="row w-full pb-5">
+  <section class="card col-12">
+    <header class="row align-items-center px-4 py-2">
+      <div class="form-group col col-md-8 col-lg-6">
+        <input type="text" placeholder="Buscar..." [formControl]="filter">
+      </div>
+      <button routerLink="new" class="btn btn-flat btn-primary ml-auto">Agregar usuario</button>
+    </header>
+    <div class="main-table-wrapper">
+      <table class="main-table-content">
+        <thead class="data-table-header">
+        <tr class="data-table-row">
+          <td>Id</td>
+          <td>Nombre</td>
+          <td>Email</td>
+          <td>Dirección</td>
+          <td></td>
+        </tr>
+        </thead>
+        <tbody class="data-table-content">
+        <tr class="data-table-row"
+            *ngFor="let user of filteredUsers | slice : currentPage * pageSize : currentPage * pageSize + pageSize">
+          <td>{{user.id}}</td>
+          <td>{{user.name}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.address}}</td>
+          <td>
+            <div class="row flex-nowrap">
+              <button class="btn btn-icon" [routerLink]="['/users', user.id]">
+                <i class="material-icons">edit</i>
+              </button>
+              <button (click)="confirmDeleteUser(user)" class="btn btn-icon btn-warn">
+                <i class="material-icons">delete</i>
+              </button>
+            </div>
+          </td>
+        </tr>
+        <tr *ngIf="!filteredUsers?.length">
+          <td style="text-align: center" colspan="5">Sin registros</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <footer class="main-table-footer">
+      <span class="rows-amount">
+        {{currentPage * pageSize + 1}}-{{currentPage * pageSize + pageSize}} de {{filteredUsers.length}}
+      </span>
+      <span class="table-pagination">
+        <i (click)="changePage(-1)" class="material-icons">keyboard_arrow_left</i>
+        <i (click)="changePage(1)" class="material-icons">keyboard_arrow_right</i>
+      </span>
+    </footer>
+  </section>
+</div>
+
+<app-alert
+  *ngIf="confirmDelete"
+  title="Eliminar usuario"
+  message="¿Estas seguro de eliminar el usuario?"
+  (action)="deleteUser($event)"
+></app-alert>

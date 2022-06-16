@@ -1,0 +1,48 @@
+<form [formGroup]="form" (submit)="submit()" class="row justify-content-between" autocomplete="off">
+  <h3>{{id ? 'Editar' : 'Crear'}} Usuario {{id}}</h3>
+  <h4 class="col-12">Contacto</h4>
+  <div class="form-group col-12 col-md-5">
+    <label for="name">Nombre completo</label>
+    <input id="name" #name maxlength="50" name="name" formControlName="name" type="text">
+    <span
+      class="message-error">{{form.get('name')?.errors | getError : {minlength: 'El nombre debe contener mínimo 3 caracteres'} }}</span>
+    <span class="input-counter">{{name.value.length}}/50</span>
+  </div>
+  <div class="form-group col-12 col-md-5">
+    <label for="email">Correo electrónico</label>
+    <input id="email" #email maxlength="50" name="email" formControlName="email" type="text">
+    <span
+      class="message-error">{{form.get('email')?.errors | getError : {email: 'Ingresa un correo electrónico valido'} }}</span>
+    <span class="input-counter">{{email.value.length}}/50</span>
+  </div>
+  <h4 class="col-12">Dirección</h4>
+  <div class="form-group col-12 col-md-5">
+    <label for="street">Calle</label>
+    <input id="street" #street maxlength="20" name="street" formControlName="street" type="text">
+    <span class="message-error">{{form.get('street')?.errors | getError}}</span>
+    <span class="input-counter">{{street.value.length}}/20</span>
+  </div>
+  <div class="form-group col-12 col-md-5">
+    <label for="no">Número</label>
+    <input id="no" #no maxlength="10" name="no" formControlName="no" type="text">
+    <span class="message-error">{{form.get('no')?.errors | getError}}</span>
+    <span class="input-counter">{{no.value.length}}/10</span>
+  </div>
+  <div class="form-group col-12 col-md-5">
+    <label for="postalCode">Código postal</label>
+    <input id="postalCode" #postalCode maxlength="5" name="postalCode" formControlName="postalCode" type="text">
+    <span
+      class="message-error">{{form.get('postalCode')?.errors | getError : {pattern: 'Código postal a 5 dígitos'} }}</span>
+    <span class="input-counter">{{postalCode.value.length}}/5</span>
+  </div>
+  <div class="form-group col-12 col-md-5">
+    <label for="city">Ciudad</label>
+    <input id="city" #city maxlength="20" name="city" formControlName="city" type="text">
+    <span class="message-error">{{form.get('city')?.errors | getError}}</span>
+    <span class="input-counter">{{city.value.length}}/20</span>
+  </div>
+
+  <div class="col-12 mt-4">
+    <button type="submit" class="btn btn-flat btn-primary">Guardar</button>
+  </div>
+</form>

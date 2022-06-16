@@ -1,0 +1,32 @@
+@import "src/assets/styles/variables";
+
+.notification-toast {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 1000;
+  position: fixed;
+  top: 16px;
+  right: 12px;
+  color: white;
+  padding: 4px 6px 4px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+
+  button {
+    color: white;
+  }
+
+  &.notification-error {
+    background: $color-danger;
+
+  }
+
+  &.notification-success {
+    background: $color-success;
+  }
+
+  &.notification-warning {
+    background: $color-warning;
+  }
+}
